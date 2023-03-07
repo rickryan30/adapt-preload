@@ -1,0 +1,21 @@
+{
+    "name": "adapt-preloadImages",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:rickryan30/adapt-preload"
+    },
+    "framework": ">=2",
+    "version": "3.0.1",
+    "homepage": "https://github.com/rickryan30/adapt-preload.git",
+    "issues": "https://github.com/rickryan30/adapt-preload/issues",
+    "displayName": "Preload Images",
+    "extension": "preloadImages",
+    "description": "An extension that will preload all images used in this course",
+    "main": "/js/adapt-preloadImages.js",
+    "keywords": [
+        "adapt-plugin",
+        "adapt-extension"
+    ],
+    "targetAttribute": "_preloadImages",
+    "license": "GPL-3.0"
+}
