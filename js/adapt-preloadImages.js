@@ -33,7 +33,7 @@ define([
     
     function loadImages() {
         var images = imageUrls[0];
-        var imgPath = 'course/en/assets/'; 
+        var imgPath = window.location.origin + window.location.pathname + 'course/en/assets/'; 
         var imgArray = [];
         for (var i = 0; i < images.length; i++) {
             imgArray.push(imgPath+images[i]);
@@ -57,12 +57,17 @@ define([
             image.addEventListener('load', onloaded);
             image.addEventListener('error', onloaded);
             $cache.append(image);
+            console.log(image);
         });
     }
 
-    Adapt.on({
-        'app:dataReady': onDataReady
-      });
+    Adapt.once('adapt:start', function() {
+        onDataReady();
+    
+        Adapt.on('remove', function() {
+            loadImages();
+        });
+    });
     
   });
   
