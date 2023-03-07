@@ -48,7 +48,6 @@ define([
             image.removeEventListener('error', onloaded);
             $(image).remove();
             loaded++;
-            console.log(imgArray.length);
             if (loaded === imgArray.length) $cache.remove();
         };
         imgArray.forEach(src => {
@@ -58,13 +57,11 @@ define([
             image.addEventListener('load', onloaded);
             image.addEventListener('error', onloaded);
             $cache.append(image);
-            console.log(image);
         });
     }
 
     Adapt.on({
-        'app:dataReady': onDataReady,
-        // 'menuView:ready pageView:ready': onDataReady,
+        'app:dataReady': onDataReady
       });
     
   });
